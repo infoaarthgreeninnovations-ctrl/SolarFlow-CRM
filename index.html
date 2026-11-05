@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SolarFlow CRM — EPC Project Management</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i class="fas fa-solar-panel"></i>
+          <span>AARTH Solar Flow</span>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-view="dashboard">
+          <i class="fas fa-chart-pie"></i><span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item" data-view="leads">
+          <i class="fas fa-user-plus"></i><span>Leads</span>
+          <span class="badge" id="leadsBadge">0</span>
+        </a>
+        <a href="#" class="nav-item" data-view="confirmed">
+          <i class="fas fa-handshake"></i><span>Confirmed</span>
+          <span class="badge" id="confirmedBadge">0</span>
+        </a>
+        <a href="#" class="nav-item" data-view="pipeline">
+          <i class="fas fa-stream"></i><span>Pipeline</span>
+        </a>
+        <a href="#" class="nav-item" data-view="completed">
+          <i class="fas fa-check-double"></i><span>Completed</span>
+          <span class="badge" id="completedBadge" style="background:#10b981">0</span>
+        </a>
+        <a href="#" class="nav-item" data-view="payments">
+          <i class="fas fa-rupee-sign"></i><span>Payments</span>
+        </a>
+        <a href="#" class="nav-item" data-view="materials">
+          <i class="fas fa-boxes"></i><span>Materials</span>
+        </a>
+        <a href="#" class="nav-item" data-view="documents">
+          <i class="fas fa-file-alt"></i><span>Documents</span>
+        </a>
+        <a href="#" class="nav-item" data-view="reminders">
+          <i class="fas fa-bell"></i><span>Reminders</span>
+          <span class="badge warning" id="remindersBadge">0</span>
+        </a>
+        <a href="#" class="nav-item" data-view="team">
+          <i class="fas fa-users"></i><span>Team</span>
+        </a>
+        <a href="#" class="nav-item" data-view="reports">
+          <i class="fas fa-chart-bar"></i><span>Reports</span>
+        </a>
+        <a href="#" class="nav-item" data-view="profit">
+          <i class="fas fa-calculator"></i><span>Profit Estimator</span>
+        </a>
+        <a href="#" class="nav-item" data-view="settings">
+          <i class="fas fa-cog"></i><span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="avatar">AS</div>
+          <div>
+            <div class="user-name">AARTH Solar</div>
+            <div class="user-role">Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="globalSearch" placeholder="Search leads, projects, customers..." />
+        </div>
+        <div class="topbar-actions">
+          <span id="backupIndicator" class="backup-indicator" title="Last backup"></span>
+          <button class="btn btn-icon" id="notifBtn" title="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="dot" id="notifDot"></span>
+          </button>
+          <button class="btn btn-primary" id="addLeadBtn">
+            <i class="fas fa-plus"></i> New Lead
+          </button>
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <!-- Views injected by JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Modal</h3>
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
