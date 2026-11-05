@@ -20,3 +20,6 @@ Quotation maker is at `quotation-maker.html` (also embedded from the CRM).
 
 ## Backup
 Use Settings → Download Backup Now. The last backup date appears on the top bar.
+
+---
+Full source files (including complete `js/app.js` and `quotation-maker.html`) are available in the local build. Clone and replace the JS/CSS with the complete versions for full functionality.
